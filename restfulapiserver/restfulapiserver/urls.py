@@ -22,5 +22,11 @@ urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
     path('addresses/',views.address_list),
+    path('addresses/<int:pk>/', views.address),
+    path('login/', views.login),
+    path('pages/login', views.login_page),
+    path('app_login/', views.app_login),
+    path('login/', include('login.urls')),
+    path('todo/',include('todo.urls')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
