@@ -30,6 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('addresses/',views.address_list),
     path('addresses/<int:pk>/', views.address),
+    
     path('login/', views.login),
     path('pages/login', views.login_page),
     path('app_login/', views.app_login),

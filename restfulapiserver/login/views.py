@@ -17,7 +17,6 @@ class AppLogin(APIView):
         user_id = request.data.get('user_id', "")
         user_pw = request.data.get('user_pw', "")
         user = LoginUser.objects.filter(user_id=user_id).first()
-
         if user is None:
             return Response(dict(msg="해당 ID의 사용자가 없습니다."))
         if check_password(user_pw, user.user_pw):
@@ -41,9 +40,7 @@ class RegistUser(APIView):
                 user_pw=user.user_pw
             )
             return Response(data)
-
         user = serializer.create(request.data)
-
         return Response(data=LoginUserSerializer(user).data)
 
 
