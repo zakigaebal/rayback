@@ -25,7 +25,7 @@ class AppLogin(APIView):
                                  gender=user.gender, email=user.email, name=user.name, age=user.age))
         else:
             return Response(dict(msg="로그인 실패. 패스워드 불일치"))
-        
+
             
         
 class RegistUser(APIView):
@@ -71,6 +71,8 @@ def logout_view(request):
 def signup_view(request):
     if request.method == 'POST':
         print("request "+ str(request))
+        print("파일 : "+ request.FILES["profile_img"])
+        profile_img = request.FILES["profile_img"]
         print("body "+ str(request.body))
         username = request.POST.get("username", "")
         password = request.POST.get("password", "")

@@ -1,4 +1,7 @@
+{% load static %}
 로그인 페이지
+<br>
+<img src="{% static 'login.png' %}" alt="">
 <br>
 {% if user.is_authenticated %}
     로그인성공!

@@ -12,7 +12,7 @@ class LoginUser(models.Model):
     email = models.CharField(verbose_name="이메일 주소", max_length=255, null=False, default='')
     name = models.CharField(verbose_name="이름", max_length=20, null=True)
     age = models.IntegerField(verbose_name="나이", default=20)
-    
+    profile_img = models.ImageField(verbose_name="프로필이미지", null=True)
     class Meta:
         db_table = 'login_user'
         verbose_name = '로그인 테스트 테이블'

@@ -8,6 +8,9 @@ from rest_framework.parsers import JSONParser
 from django.contrib.auth import authenticate
 # Create your views here.
 
+@csrf_exempt
+def home(request):
+    return render(request, "addresses/index.html")
 
 @csrf_exempt
 def address_list(request):

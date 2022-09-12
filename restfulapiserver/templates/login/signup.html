@@ -1,7 +1,10 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'signup.css' %}"
 회원가입 페이지
 <br>
-
-<form action="" method="POST">
+<img src="{% static 'join.png' %}" alt="">
+<br>
+<form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <p>아이디</p>
     <input name = "username" type="text">
@@ -13,5 +16,7 @@
     <input name = "lastname" type="text">
     <p>이메일</p>
     <input name = "email" type="text">
+    <p>프로필사진</p>
+    <input name="profile_img" type="file">
     <input type="submit" value="회원가입">
 </form>
